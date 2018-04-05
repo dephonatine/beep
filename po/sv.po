@@ -1,0 +1,76 @@
+# Translators, if you are not familiar with the PO format, gettext
+# documentation is worth reading, especially sections dedicated to
+# this format, e.g. by running:
+# info -n '(gettext)PO Files'
+# info -n '(gettext)Header Entry'
+# Some information specific to po-debconf are available at
+# /usr/share/doc/po-debconf/README-trans
+# or http://www.debian.org/intl/l10n/po-debconf/README-trans
+# Developers do not need to manually edit POT or PO files.
+# Translators:
+#      Daniel Nylander <po@danielnylander.se>, 2005-2006.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: beep\n"
+"Report-Msgid-Bugs-To: beep@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-11 18:36+0200\n"
+"PO-Revision-Date: 2008-11-24 10:11+0100\n"
+"Last-Translator: Martin Bagge <brother@bsnet.se>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for all"
+msgstr "körbar för all"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for group audio"
+msgstr "körbar för gruppen \"audio\""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable only for root"
+msgstr "körbar endast för root-användaren."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "Install beep as:"
+msgstr "Installera beep som:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"beep must be run as root since it needs to access the speaker hardware. "
+"There are several possibilities to make the program usable:  Either only for "
+"root (no suid bit at all), executable only by users of the group audio, or "
+"usable for all."
+msgstr ""
+"beep måste köras som root eftersom den behöver åtkomst till "
+"högtalarhårdvaran. Det finns flera sätt att göra programmet användbart:  "
+"Antingen endast för root (ingen suid-bit alls), körbar endast för användare "
+"i gruppen \"audio\" eller körbar för alla."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Since each program set as suid root can be a security risk this is not done "
+"by default.  However, the program is quite small (~150 lines of code), so it "
+"is fairly easy to verify the safety of the code yourself, if you don't trust "
+"the package maintainer's judgement."
+msgstr ""
+"Eftersom de program som är suid root kan vara en säkerhetsrisk kommer detta "
+"inte göras som standard.  Programmet är ganska litet (~150 rader kod) och är "
+"lätt att validera säkerheten i koden om du inte litar på mitt omdöme."

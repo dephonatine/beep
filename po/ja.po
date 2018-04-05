@@ -1,0 +1,78 @@
+# 
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+# 
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+# 
+#    Developers do not need to manually edit POT or PO files.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: beep 1.2.2-22\n"
+"Report-Msgid-Bugs-To: beep@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-11 18:36+0200\n"
+"PO-Revision-Date: 2008-11-24 10:11+0100\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for all"
+msgstr "全ユーザが使えるようにする"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for group audio"
+msgstr "audio グループだけが実行できるようにする"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable only for root"
+msgstr "root だけが使えるようにする"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "Install beep as:"
+msgstr "beep のインストール時設定について:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"beep must be run as root since it needs to access the speaker hardware. "
+"There are several possibilities to make the program usable:  Either only for "
+"root (no suid bit at all), executable only by users of the group audio, or "
+"usable for all."
+msgstr ""
+"スピーカーのハードウェアにアクセスする必要があるので beep は root として実行"
+"しなければなりません。プログラムを使うためにやり方がいくつかあります: root の"
+"みにする (suid を全く使わないようにする) 、audio グループ所属のユーザだけが使"
+"えるようにする、誰でも使えるようにする、のどれかです。"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Since each program set as suid root can be a security risk this is not done "
+"by default.  However, the program is quite small (~150 lines of code), so it "
+"is fairly easy to verify the safety of the code yourself, if you don't trust "
+"the package maintainer's judgement."
+msgstr ""
+"各プログラムを root に suid するのはセキュリティリスクになるので、デフォルト"
+"ではこの方法は採りません。しかしながら、このプログラムは非常に小さいので (150"
+"行程度のコードです)、パッケージメンテナの判断を信用しない場合、あなた自身で"
+"コードの安全性を確認するのはとても簡単です。"

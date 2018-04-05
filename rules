@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+#DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -- FLAGS="$(shell dpkg-buildflags --get CFLAGS)"
+
+override_dh_auto_install:
+	cp beep debian/beep/usr/bin
+	cp beep debian/beep-udeb/usr/bin
+	cp beep.1.gz debian/beep/usr/share/man/man1
+	gunzip debian/beep/usr/share/man/man1/beep.1.gz
+	cd debian/beep/usr/share/man/man1 && patch beep.1 ../../../../../beep.1.diff
+	-rm -f debian/beep/usr/share/man/man1/beep.1.orig
+	chown root:audio debian/beep/usr/bin/beep 

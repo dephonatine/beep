@@ -1,0 +1,79 @@
+# Italian translation of beep debconf messages.
+# Copyright (C) 2002-2009 Rhonda D'Vine <rhonda@debian.org>
+# This file is distributed under the same license as the beep package.
+# davide gliozzi <zetazerozeta@yahoo.it>, 2007
+# Beatrice Torracca <beatricet@libero.it>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: beep\n"
+"Report-Msgid-Bugs-To: beep@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-11 18:36+0200\n"
+"PO-Revision-Date: 2016-01-01 13:02+0100\n"
+"Last-Translator: Beatrice Torracca <beatricet@libero.it>\n"
+"Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for all"
+msgstr "utilizzabile da tutti"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for group audio"
+msgstr "utilizzabile dal gruppo audio"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable only for root"
+msgstr "utillizzabile solamente da root"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "Install beep as:"
+msgstr "Installare beep come:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"beep must be run as root since it needs to access the speaker hardware. "
+"There are several possibilities to make the program usable:  Either only for "
+"root (no suid bit at all), executable only by users of the group audio, or "
+"usable for all."
+msgstr ""
+"beep deve essere eseguito come root dato che ha l'esigenza di accedere "
+"all'hardware degli altoparlanti. Ci sono diverse possibilità per rendere il "
+"programma fruibile: o solamente a root (non si usa affatto il bit suid), o "
+"solamente agli utenti del gruppo audio, oppure a tutti."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Since each program set as suid root can be a security risk this is not done "
+"by default.  However, the program is quite small (~150 lines of code), so it "
+"is fairly easy to verify the safety of the code yourself, if you don't trust "
+"the package maintainer's judgement."
+msgstr ""
+"Dal momento che ogni programma con suid root può essere un rischio per la "
+"sicurezza, questo non viene abilitato in modo predefinito. Comunque, il "
+"programma è abbastanza piccolo (circa 150 righe di codice) perciò è "
+"abbastanza facile verificare da soli la sicurezza del codice, qualora non ci "
+"si fidasse del giudizio del manutentore del pacchetto."
+
+#~ msgid ""
+#~ "suid root for all, suid root with only group audio executable, not suid "
+#~ "at all"
+#~ msgstr ""
+#~ "suid root per tutti, suid root solamente con gli eseguibili del gruppo "
+#~ "audio, nient'affatto suid"

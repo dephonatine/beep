@@ -1,0 +1,341 @@
+beep (1.3-4+deb9u1) stretch-security; urgency=medium
+
+  * CVE-2018-0492
+
+ -- Moritz Muehlenhoff <jmm@debian.org>  Sun, 25 Mar 2018 19:25:00 +0200
+
+beep (1.3-4) unstable; urgency=low
+
+  * Update my name.
+  * Bump Standards-Version to 3.9.6.
+  * Switch to source format 3.0 (quilt).
+  * Convert to dh style rules file.
+  * New patch fix-makefile to make make clean not fail.
+  * Add #DEBHELPER# to post{inst,rm} files.
+  * Use pathfind() function instead of hardcoded path to dpkg-statoverride.
+  * Name GPL properly in debian/copyright.
+
+ -- Rhonda D'Vine <rhonda@debian.org>  Mon, 04 Jan 2016 13:34:37 +0100
+
+beep (1.3-3) unstable; urgency=low
+
+  * Add patch catch-sig-term to also stop the beep when receiving SIGTERM.
+    Thanks to Jérôme for the patch.
+
+ -- Gerfried Fuchs <rhonda@debian.org>  Sun, 10 Jun 2012 11:51:43 +0200
+
+beep (1.3-2) unstable; urgency=low
+
+  * The "l10n R us" release.
+  * Added/Updated debconf translations:
+    - Danish by Joe Hansen (closes: #633380)
+    - Polish by Michał Kułach (closes: #659367)
+    - Italian by Beatrice Torracca (closes: #660233)
+  * Bump Standards-Version to 3.9.3.
+  * Add recommended targets build-arch/build-indep to debian/rules.
+
+ -- Gerfried Fuchs <rhonda@debian.org>  Fri, 02 Mar 2012 19:29:25 +0100
+
+beep (1.3-1) unstable; urgency=low
+
+  * New Upstream release importing all our changes  \o/
+  * Bump Standards-Version to 3.9.2.
+  * Add Vcs-* fields to control file.
+  * Relicensed Debian packaging under WTFPLv2.
+  * Explicitly call set -e instead of -e on the hashbang line.
+
+ -- Gerfried Fuchs <rhonda@debian.org>  Tue, 31 May 2011 20:49:17 +0200
+
+beep (1.2.2-24) unstable; urgency=low
+
+  * Apply patch from Frans Pop for making beep-udeb depend on libc6-udeb
+    instead of libc6 (closes: #562001)
+  * Bump Standards-Version to 3.8.3.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Mon, 21 Dec 2009 23:20:38 +0100
+
+beep (1.2.2-23) unstable; urgency=low
+
+  * Updated translation:
+    - Vietnamese by Clytie Siddall (closes: #498496)
+    - Spanish by Francisco Javier Cuadrado (closes: #506415)
+    - Catalan by Matt Bonner (closes: #521470)
+    - Italian by davide gliozzi
+  * Split _Choices field in debian/templates into __Choices without unfuzzying
+    translations.
+  * Bumped Standards-Version to 3.8.1.
+  * Remove update cruft in maintainer scripts from ancient releases.
+  * Fixed two typos in manpage noticed by A. Costra, thanks (closes: #497890)
+  * Add "minimal package" to the synopsis of beep-udeb.
+  * Add author + description informations to patches.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Sun, 29 Mar 2009 11:19:30 +0200
+
+beep (1.2.2-22) unstable; urgency=low
+
+  * Remove Homepage control field from udeb.
+  * s/my/the package maintainer's/ in debian/templates, users have no concept
+    of "my" when they see the debconf question (removing overrides file).
+  * Updated templates file with more suggestion sent in by Esko Arajärvi,
+    thanks.
+  * Update debian/beep.1.diff to escape hyphens where they actually do mean
+    the minus sign.
+  * debian/po/vi.po: Removed the Language-Team as it bounces (or moderates,
+    can't read Vietnamese).
+  * New translation:
+    - Finish by Esko Arajärvi (closes: #492724, #493220)
+    - Romanian by Eddy Petrișor (closes: #493764)
+    - Euskara by Piarres Beobide (closes: #493842)
+  * Updated translations:
+    - Galician by Jacobo Tarrio (closes: #492792, #493305)
+    - Japanese by Hideki Yamane (closes: #492969, #493535)
+    - French by Daniel Déchelotte (closes: #493072, #494490)
+    - Swedish by Martin Bagge (closes: #493344)
+    - Portuguese by Miguel Figueiredo (closes: #493264)
+    - Russian by Yuri Kozlov (closes: #493280)
+    - Czech by Miroslav Kure (closes: #493596)
+    - Dutch by Thijs Kinkhorst (closes: #494093)
+    - Brazilian Portuguese by Felipe Augusto van de Wiel
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Tue, 12 Aug 2008 12:00:46 -0300
+
+beep (1.2.2-21) unstable; urgency=low
+
+  * Don't ignore make clean errors anymore.
+  * New debconf translation: Galician by Jacobo Tarrio (closes: #481751)
+  * Updated to Standards-Version to 3.8.0, add README.source file (referencing
+    quilt's).
+  * Also strip sections .comment and .note (closes: #490163)
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Thu, 10 Jul 2008 15:14:18 +0200
+
+beep (1.2.2-20) unstable; urgency=low
+
+  * Added Homepage: control field.
+  * Moved patches to quilt, split them into:
+    - makefile-fixup: don't try to remove something outside the build place
+    - verbose-option: enable --verbose/--debug for getting info on what's
+      getting done
+    - multiple-freq: produce a warning on multiple frequency parameters
+    - serial-console-fix: use /dev/tty0 instead of /dev/console
+    - devfs-fix: try /dev/vc/0 too
+    - event-option: enable --event switch for specifying a special device
+  * Updated copyright file with the actual header from the code.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Wed, 03 Oct 2007 19:46:07 +0200
+
+beep (1.2.2-19) unstable; urgency=low
+
+  * Translation update: Japanese (Hideki Yamane, closes: #392171)
+  * Refixed manpage with respect to the event device handling
+    (closes: #397680)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Tue, 20 Feb 2007 23:53:27 +0100
+
+beep (1.2.2-18) unstable; urgency=low
+
+  * Use install instead of make install which just copies over the files...
+  * Changed postrm to remove bashism.
+  * Reverted part of the evdev patch: One needs to explicitly ask for using
+    /dev/input/event0 with the -e switch instead of it being tried
+    automatically (closes: #354694)
+  * Bumped Standards-Version to 3.7.2, no changes needed.
+  * Add overrides for using-first-person-in-templates, it's about me as
+    package maintainer.
+  * Changed templates texting for the select prompt.
+  * Translations updated: Brazilian Portuguese (Felipe Augusto van de Wiel),
+    German (myself), Catalan (Miguel Gea Milvaques), Spanish (David Martínez
+    Moreno), Swedish (Daniel Nylander), Portuguese (Miguel Figueiredo), Czech
+    (Miroslav Kure), Vietnamese (Clytie Siddall), French (Daniel Déchelotte,
+    closes: #375358)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Sun, 25 Jun 2006 11:12:11 -0500
+
+beep (1.2.2-17) unstable; urgency=low
+
+  * Added additional debconf translations:
+    - Portuguese by Miguel Figueiredo (closes: #344676)
+  * Updated debconf translation:
+    - Vietnamese by Clytie Siddall (closes: #343851)
+  * Fixed breakage raised with --verbose patch (closes: #335027)
+  * Added udeb generation (closes: #350220)
+  * Applied patch from Alessandro Zummo for evdev and general device node
+    support (closes: #350214)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Tue, 14 Feb 2006 01:27:06 +0100
+
+beep (1.2.2-16) unstable; urgency=low
+
+  * The "update for the masses" release.
+  * Added debconf alternative for debconf-2.0 to Depends (closes: #331759)
+  * Added suggestions by Clytie Siddall to debian/templates file.
+  * Added additional debconf translations:
+    - Vietnamese by Clytie Siddall (closes: #313153)
+    - Swedish by Daniel Nylander (closes: #330941)
+    - Spanish by César Gómez Martín (closes: #333878)
+  * Updated debconf translation:
+    - Czech by Miroslav Kure
+    - German by myself
+    - Japanese by Hideki Yamane
+    - Catalan by Miguel Gea Milvaques (closes: #334199)
+    - Italian by Stefano Melchior (closes: #334240)
+    - French by Daniel Déchelotte (closes: #334486)
+  * Use ":" as seperator in chown instead of deprecated ".".
+  * Build-Depends patch added to be able to fix the wrong example in the
+    manpage (closes: #330020)
+  * Patched beep to accept an --verbose or --debug option, patched manpage
+    accordingly (closes: #297791)
+  * Print warning on multiple -f values (closes: #270056)
+  * Finally lowercased synopsis.
+  * Updated Standards-Version to 3.6.2, no changes needed.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Wed, 19 Oct 2005 11:58:56 +0200
+
+beep (1.2.2-15) unstable; urgency=high
+
+  * Added additional debconf translation:
+    - Czech by Miroslav Kure (closes: #293000)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Thu, 12 May 2005 10:18:50 +0200
+
+beep (1.2.2-14) unstable; urgency=medium
+
+  * The "l10n R us" release.
+  * Added the following translations of the debconf files:
+    - Japanese, by Hideki Yamane (closes: #242415)
+    - Catalan, by Miguel Gea Milvaques (closes: #284151)
+    Thanks to all of them.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Mon, 06 Dec 2004 12:10:11 +0100
+
+beep (1.2.2-13) unstable; urgency=low
+
+  * Added Italian debconf file from Stefano Melchior.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Mon, 22 Mar 2004 21:50:36 +0100
+
+beep (1.2.2-12) unstable; urgency=low
+
+  * Added Dutch debconf file from Tim Vandermeersch (closes: #209118)
+  * Updated Russian template, thanks to Ilgiz Kalmetev.
+  * Updated to policy version 3.6.1, no changes needed.
+  * Switched to utf8 for the changelog.Debian.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Thu, 02 Oct 2003 11:35:43 +0000
+
+beep (1.2.2-11) unstable; urgency=low
+
+  * Added the following translations of the debconf files:
+    - French, by Daniel Déchelotte (closes: #185067)
+    - Brazilian Portuguese, by Andre Luis Lopes (closes: #184955)
+    Thanks to all of them.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Mon, 17 Mar 2003 16:23:03 +0100
+
+beep (1.2.2-10) unstable; urgency=low
+
+  * debian/rules:
+    - converted to po-debconf
+    - generalized the file a little bit more
+  * debian/control:
+    - updated to policy version 3.5.8, no changes needed.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Sat, 08 Mar 2003 18:06:20 +0100
+
+beep (1.2.2-9) unstable; urgency=low
+
+  * Removed doubled sentence in english debconf templates file, and rewrote
+    parts of sentences in the german one.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Thu, 24 Oct 2002 17:00:19 +0200
+
+beep (1.2.2-8) unstable; urgency=low
+
+  * Fixed typos in german templates.de file (closes: #163176). Thanks for
+    noticing them, Christian (although I won't remove the first , -- it's
+    there for rethorical reasons).
+  * Removed /usr/doc -> /usr/share/doc handling from maintainer scripts.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Thu, 03 Oct 2002 11:59:05 +0200
+
+beep (1.2.2-7) unstable; urgency=low
+
+  * Updated to policy 3.5.7: support for DEB_BUILD_OPTIONS added.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Sun, 08 Sep 2002 21:27:23 +0200
+
+beep (1.2.2-6) unstable; urgency=low
+
+  * Corrected Goswin's surname in previous changelog entry (sorry!).
+      (closes: #157900)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Sat, 24 Aug 2002 15:59:57 +0200
+
+beep (1.2.2-5) unstable; urgency=low
+
+  * Applied devfs support patch from Goswin Brederlow (closes: #148884)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Tue, 13 Aug 2002 21:27:56 +0200
+
+beep (1.2.2-4) unstable; urgency=high
+
+  * Missing Build-Depends: debconf-utils -- thanks, lamont (closes: #145547)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Thu, 02 May 2002 16:18:22 +0200
+
+beep (1.2.2-3) unstable; urgency=high
+
+  * Install postrm file, too (no idea how I missed that, stupid me...)
+  * Installed only main debconf templates file, didn't merge them :-((  Do it
+    now -- no other changes, would be nice to have the translation in woody.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Tue, 30 Apr 2002 20:24:20 +0200
+
+beep (1.2.2-2) unstable; urgency=medium
+
+  * Open /dev/tty0 instead of /dev/console (closes: #134015)
+
+ -- Gerfried Fuchs <alfie@debian.org>  Tue, 23 Apr 2002 17:33:29 +0200
+
+beep (1.2.2-1) unstable; urgency=low
+
+  * New upstream release
+  * printf("\a") now if it can't open /dev/console (closes: #134466)
+  * Put a sane paragraph into the copyright file, not only the location of the
+    GPL on Debian Systems.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Tue, 02 Apr 2002 08:21:36 +0200
+
+beep (1.2.1-5) unstable; urgency=low
+
+  * Updated watchfile to uscan version=2.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Mon, 18 Mar 2002 11:30:31 +0100
+
+beep (1.2.1-4) unstable; urgency=medium
+
+  * Added russion templates file -- thanks to Ilgiz Kalmetev (closes: #137619)
+  * changed from char to int to make it work on systems where char is unsigned
+    -- thanks to Daniel Eisenbud (closes: #136281) --> urgency reason
+
+ -- Gerfried Fuchs <alfie@debian.org>  Mon, 11 Mar 2002 12:52:08 +0100
+
+beep (1.2.1-3) unstable; urgency=low
+
+  * Rewrote the templates file with hints from JoeyH, dancer and Francesco --
+    thanks, dudes (closes: #135866, #134811)
+  * Cleaned up rules file a little bit.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Wed, 27 Feb 2002 12:47:54 +0100
+
+beep (1.2.1-2) unstable; urgency=low
+
+  * Un-debhepler-ized rules file.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Wed, 13 Feb 2002 13:15:33 +0100
+
+beep (1.2.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Gerfried Fuchs <alfie@debian.org>  Fri, 08 Feb 2002 12:38:28 +0100

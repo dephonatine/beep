@@ -1,0 +1,88 @@
+--- beep.1.orig	2009-03-24 19:02:59.000000000 +0100
++++ beep.1	2009-03-24 19:04:30.000000000 +0100
+@@ -1,12 +1,12 @@
+-.TH BEEP 1 "March 2002"
++.TH BEEP 1 "July 2008"
+ .SH NAME
+ beep \- beep the pc speaker any number of ways
+ .SH SYNOPSIS
+ .B beep
+-[\-f N] [\-l N] [\-r N] [\-d N] [\-D N] [\-s] [\-c]
++[\-\-verbose | \-\-debug] [\-e device | \-\-device device] [\-f N] [\-l N] [\-r N] [\-d N] [\-D N] [\-s] [\-c]
+ .HP
+ .B beep
+-[ OPTIONS ] [-n] [--new] [ OPTIONS ]
++[ OPTIONS ] [\-n] [\-\-new] [ OPTIONS ]
+ .HP
+ .B beep
+ [\-h] [\-\-help]
+@@ -20,6 +20,15 @@
+ All options have default values, meaning that just typing '\fBbeep\fR' will work.  If an option is specified more than once on the command line, subsequent options override their predecessors.  So '\fBbeep\fR \-f 200 \-f 300' will beep at 300Hz.
+ .SH OPTIONS
+ .TP
++\fB\-\-verbose\fR, \fB\-\-debug\fR
++enable debug output. This option prints a line like the following before each
++beep:
++
++[DEBUG] 5 times 200 ms beeps (100 delay between, 0 delay after) @ 1000.00 Hz
++.TP
++\fB\-e\fR device, \fB\-\-device\fR device
++use device as event device. If the switch isn't used, /dev/tty0 and /dev/vc/0 are tried in turn.
++.TP
+ \fB\-f\fR N
+ beep at N Hz, where 0 < N < 20000.  As a general ballpark, the regular terminal beep is around 750Hz.  N is not, incidentally, restricted to whole numbers.
+ .TP
+@@ -35,12 +44,12 @@
+ \fB\-n\fR, \fB\-\-new\fR
+ this option allows you to break the command line up into specifying multiple beeps.  Each time this option is used, beep starts treating all further arguments as though they were for a new beep.  So for example:
+ 
+-\fBbeep\fR -f 1000 -n -f 2000 -n -f 1500
++\fBbeep\fR \-f 1000 \-n \-f 2000 \-n \-f 1500
+ 
+-would produce a sequence of three beeps, the first with a frequency of 1000Hz (and otherwise default values), then a second beep with a frequency of 2000Hz (again, with things like delay and reps being set to their defaults), then a third beep, at 1500Hz.  This is different from specifying a -r value, since -r repeats the same beep multiple times, whereas -n allows you to specify different beeps.  After a -n, the new beep is created with all the default values, and any of these can be specified without altering values for preceeding (or later) beeps.  See the \fBEXAMPLES\fR section if this managed to confuse you.
++would produce a sequence of three beeps, the first with a frequency of 1000Hz (and otherwise default values), then a second beep with a frequency of 2000Hz (again, with things like delay and reps being set to their defaults), then a third beep, at 1500Hz.  This is different from specifying a \-r value, since \-r repeats the same beep multiple times, whereas \-n allows you to specify different beeps.  After a \-n, the new beep is created with all the default values, and any of these can be specified without altering values for preceding (or later) beeps.  See the \fBEXAMPLES\fR section if this managed to confuse you.
+ .TP
+ \fB\-s\fR, \fB\-c\fR
+-these options put \fBbeep\fR into input-processing mode.  -s tells \fBbeep\fR to read from stdin, and beep after each newline, and -c tells it to do so after every character.  In both cases, the program will also echo the input back out to stdout, which makes it easy to slip \fBbeep\fR into a text-processing pipeline, see the \fBEXAMPLES\fR section.
++these options put \fBbeep\fR into input-processing mode.  \-s tells \fBbeep\fR to read from stdin, and beep after each newline, and \-c tells it to do so after every character.  In both cases, the program will also echo the input back out to stdout, which makes it easy to slip \fBbeep\fR into a text-processing pipeline, see the \fBEXAMPLES\fR section.
+ .TP
+ \fB\-h\fR, \fB\-\-help\fR
+ display usage info and exit
+@@ -55,20 +64,22 @@
+ .TP
+ A more interesting standalone setup
+ 
+-\fBbeep\fR -f 300.7 -r 2 -d 100 -l 400
++\fBbeep\fR \-f 300.7 \-r 2 \-d 100 \-l 400
+ .TP
+ As part of a log-watching pipeline
+ 
+-tail -f /var/log/xferlog | grep 'passwd' | \fBbeep\fR -f 1000 -r 5 -s
++tail \-f /var/log/xferlog | grep \-\-line\-buffered passwd | \\
++.br
++\fBbeep\fR \-f 1000 \-r 5 \-s
+ .TP
+-When using -c mode, I recommend using a short -D, and a shorter -l, so that the beeps don't blur together.  Something like this will get you a cheesy 1970's style beep-as-you-type-each-letter effect
++When using \-c mode, I recommend using a short \-D, and a shorter \-l, so that the beeps don't blur together.  Something like this will get you a cheesy 1970's style beep-as-you-type-each-letter effect
+ 
+-cat file | \fBbeep\fR -c -f 400 -D 50 -l 10
++cat file | \fBbeep\fR \-c \-f 400 \-D 50 \-l 10
+ 
+ .TP
+-A highly contrived example of -n/--new usage
++A highly contrived example of \-n/\-\-new usage
+ 
+-\fBbeep\fR -f 1000 -r 2 -n -r 5 -l 10 --new 
++\fBbeep\fR \-f 1000 \-r 2 \-n \-r 5 \-l 10 \-\-new 
+ 
+ will produce first two 1000Hz beeps, then 5 beeps at the default tone, but only 10ms long each, followed by a third beep using all the default settings (since none are specified).
+ .PP See also the \fBFREQUENCY TABLE\fR below.
+@@ -81,7 +92,7 @@
+ .PP
+ - you own the current tty
+ .PP
+-What this means is that root can always make beep work (to the best of my knowledge!), and that any local user can make beep work, BUT a non-root remote user cannot use beep in it's natural state.  What's worse, an xterm, or other x-session counts, as far as the kernel is concerned, as 'remote', so beep won't work from a non-priviledged xterm either.  I had originally chalked this up to a bug, but there's actually nothing I can do about it, and it really is a Good Thing that the kernel does things this way.  There is also a solution.
++What this means is that root can always make beep work (to the best of my knowledge!), and that any local user can make beep work, BUT a non-root remote user cannot use beep in it's natural state.  What's worse, an xterm, or other x-session counts, as far as the kernel is concerned, as 'remote', so beep won't work from a non-privileged xterm either.  I had originally chalked this up to a bug, but there's actually nothing I can do about it, and it really is a Good Thing that the kernel does things this way.  There is also a solution.
+ .PP
+ By default beep is not installed with the suid bit set, because that would just be zany.  On the other hand, if you do make it suid root, all your problems with beep bailing on ioctl calls will magically vanish, which is pleasant, and the only reason not to is that any suid program is a potential security hole.  Conveniently, beep is very short, so auditing it is pretty straightforward.
+ .PP

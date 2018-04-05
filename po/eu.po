@@ -1,0 +1,71 @@
+# translation of beep-eu.po to Euskara
+# Copyright (C) 2003-2008 Rhonda D'Vine <rhonda@debian.org>
+# This file is distributed under the same license as the beep package.
+#
+# Piarres Beobide <pi@beobide.net>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: beep-eu\n"
+"Report-Msgid-Bugs-To: beep@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-11 18:36+0200\n"
+"PO-Revision-Date: 2016-01-01 13:02+0100\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for all"
+msgstr "denentzat erabilgarri"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable for group audio"
+msgstr "audio taldearentzat erabilgarri"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "usable only for root"
+msgstr "root-entzat bakarrik erabilgarri"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "Install beep as:"
+msgstr "Instalatu beep honela:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"beep must be run as root since it needs to access the speaker hardware. "
+"There are several possibilities to make the program usable:  Either only for "
+"root (no suid bit at all), executable only by users of the group audio, or "
+"usable for all."
+msgstr ""
+"bepp root gisa exekutatu behar da bozgorailu hardwarea atzitu behar bait du. "
+"Aukera ezberdinak dauden programa erabilgarri egiteko:  Edo root-entzat "
+"bakarrik (suid bit gabe), audio taldeko erabiltzaileentzat bakarrik "
+"erabilgarri edo denentzat erabilgarri."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Since each program set as suid root can be a security risk this is not done "
+"by default.  However, the program is quite small (~150 lines of code), so it "
+"is fairly easy to verify the safety of the code yourself, if you don't trust "
+"the package maintainer's judgement."
+msgstr ""
+"Suid bit-a ezarririk duen edozein programa segurtasun ahulune bat izan "
+"daitekeenez ez da lehenespen bezala egingo.  Hala ere programa nahiko txikia "
+"denez (150 kode lerro inguru), beraz nahiko erraza da kodearen segurtasuna "
+"zure kabuz egiaztatzea ez bazara pakete mantentzelariaren erabakietaz "
+"fidatzen."
